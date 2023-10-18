@@ -1,6 +1,6 @@
 # HikeAbis App
 
-Merupakan aplikasi pembookingan pemesanan gunung bagi user pendaki
+The HokiAbis application is an application aimed at climbing users who can order climbing tickets on mountains in Indonesia, and can find out news about mountain conditions and weather in real time.
 
 ## Getting Started
 
