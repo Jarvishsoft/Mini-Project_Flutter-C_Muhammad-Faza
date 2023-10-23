@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hikeabis_app/login_page.dart';
+import 'package:hikeabis_app/login_page/login_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Demo Hike Abis',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
