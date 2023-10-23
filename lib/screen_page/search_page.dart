@@ -10,6 +10,22 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Search'),
+        centerTitle: true,
+        toolbarHeight: 60,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () {},
+        ),
+      ),
+      body: const Center(
+        child: Text('Search Page'),
+      ),
+    );
   }
 }

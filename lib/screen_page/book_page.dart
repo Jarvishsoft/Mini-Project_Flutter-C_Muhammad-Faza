@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hikeabis_app/home/homepage.dart';
 // ignore: unused_import
 import 'package:hikeabis_app/login_page/login_page.dart';
 // ignore: unused_import
 import 'package:get/get.dart';
+import 'package:hikeabis_app/screen_page/akun_page.dart';
+import 'package:hikeabis_app/screen_page/pesanan_page.dart';
+import 'package:hikeabis_app/screen_page/search_page.dart';
 
 class BookPage extends StatefulWidget {
   const BookPage({super.key});
@@ -13,25 +17,14 @@ class BookPage extends StatefulWidget {
 
 class _BookPageState extends State<BookPage> {
   int selectedIndex = 0;
+  // ignore: unused_field
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0 : Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1 : Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2 : Pesanan',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3 : Akun',
-      style: optionStyle,
-    ),
+  static const List<Widget> _page = <Widget>[
+    HomePage(),
+    SearchPage(),
+    PesananPage(),
+    AkunPage(),
   ];
 
   // ignore: unused_element
@@ -52,7 +45,7 @@ class _BookPageState extends State<BookPage> {
         backgroundColor: const Color.fromARGB(255, 241, 241, 241),
       ),
       body: Center(
-        child: _widgetOptions.elementAt(selectedIndex),
+        child: _page.elementAt(selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 47, 3, 128),

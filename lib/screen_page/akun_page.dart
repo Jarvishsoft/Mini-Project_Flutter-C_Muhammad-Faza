@@ -10,6 +10,15 @@ class AkunPage extends StatefulWidget {
 class _AkunPageState extends State<AkunPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: AboutDialog(
+        applicationIcon: FlutterLogo(),
+        applicationName: 'Hike Abis',
+        applicationVersion: '5.0.0',
+        children: [
+          Text('Hike Abis'),
+        ],
+      ),
+    );
   }
 }
