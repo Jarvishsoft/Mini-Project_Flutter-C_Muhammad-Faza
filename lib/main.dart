@@ -1,25 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:hikeabis_app/login_page/login_page.dart';
 import 'package:get/get.dart';
+import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/authentication/splashpage.dart';
+import 'package:hikeabis_app/data/providers/booking.dart';
+import 'package:hikeabis_app/data/providers/order.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Order()),
+        ChangeNotifierProvider(create: (_) => Booking()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo Hike Abis',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          color: Color(0XFF47597E),
+          centerTitle: true,
+        ),
+        primaryColor: const Color(0XFF47597E),
       ),
-      home: const LoginPage(),
+      home: const SplashPage(),
     );
   }
 }
