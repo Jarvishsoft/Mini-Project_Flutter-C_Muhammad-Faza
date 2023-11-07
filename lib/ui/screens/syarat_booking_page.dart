@@ -53,33 +53,6 @@ class _SyaratBookingPageState extends State<SyaratBookingPage> {
               const SizedBox(height: 20),
               const Divider(color: Colors.black87),
               const SizedBox(height: 20),
-              const Text(
-                'Persetujuan mentaati peraturan yang sudah ditentukan.',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: isCheck,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isCheck = value!;
-                      });
-                    },
-                  ),
-                  const Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 28,
-                        vertical: 10,
-                      ),
-                      child: Text(
-                          'Saya sanggup mengikuti dan mematuhi semua peraturan yang telah diterapkan dan ditentukan pada yang telah tertera dan pada masing-masing basecamp gunung yang akan dituju untuk pendakian, dan akan bertanggungjawab serta menerima sanksi apabila didapati melanggar peraturan.'),
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(height: 30),
               TextButton(
                 style: TextButton.styleFrom(
@@ -89,49 +62,17 @@ class _SyaratBookingPageState extends State<SyaratBookingPage> {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () {
-                  if (isCheck) {
-                    Get.offAll(const BookHomePage());
-                    // ignore: avoid_print
-                    print('Okee, terima kasih');
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          title: const Text(
-                            'Validasi Gagal Boy!',
-                            style: TextStyle(
-                              // fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          content: const Text(
-                              'Harap setujui peraturan terlebih dahulu yaa.'),
-                          shadowColor: Colors.black12,
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text(
-                                'OKE',
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              ),
-                            ),
-                            const SizedBox(height: 60),
-                          ],
-                        );
-                      },
-                    );
-                  }
+                  Get.offAll(const BookHomePage());
                 },
-                child: const Text('Setuju & Lanjutkan'),
+                child: const Text(
+                  'Setuju & Lanjutkan',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      letterSpacing: 1.8),
+                ),
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 40),
             ],
           ),
         ),

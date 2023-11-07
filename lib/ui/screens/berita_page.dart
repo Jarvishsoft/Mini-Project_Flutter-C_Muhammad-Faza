@@ -3,14 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:get/get.dart';
+import 'package:hikeabis_app/ui/screens/book_home_page.dart';
 import 'package:hikeabis_app/ui/screens/detail_berita.dart';
 import 'package:http/http.dart' as http;
-
-void main() {
-  runApp(const MaterialApp(
-    home: WartaGunung(),
-  ));
-}
 
 class WartaGunung extends StatefulWidget {
   const WartaGunung({super.key});
@@ -62,7 +57,9 @@ class _WartaGunungState extends State<WartaGunung> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: Colors.black,
-          onPressed: () {},
+          onPressed: () {
+            Get.offAll(const BookHomePage());
+          },
         ),
       ),
       body: ListView.builder(

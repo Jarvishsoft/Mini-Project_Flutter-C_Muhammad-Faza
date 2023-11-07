@@ -113,7 +113,9 @@ class PanduanBooking extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 55),
+              const Divider(color: Colors.black87),
+              const SizedBox(height: 35),
               TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 150, 137, 137),
@@ -132,7 +134,7 @@ class PanduanBooking extends StatelessWidget {
                       letterSpacing: 1.8),
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
             ],
           ),
         ),

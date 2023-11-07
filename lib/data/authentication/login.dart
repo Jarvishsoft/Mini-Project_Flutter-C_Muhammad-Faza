@@ -1,7 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/providers/auth_provider.dart';
 import 'package:hikeabis_app/data/authentication/register.dart';
 import 'package:hikeabis_app/ui/screens/book_home_page.dart';
 import 'package:hikeabis_app/ui/widgets/custom_form_field.dart';
@@ -109,8 +109,8 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16),
-                    backgroundColor: const Color(0XFF47597E),
+                    padding: const EdgeInsets.all(20),
+                    backgroundColor: const Color(0xFF968989),
                   ),
                   onPressed: () async {
                     if (await resultState.login(

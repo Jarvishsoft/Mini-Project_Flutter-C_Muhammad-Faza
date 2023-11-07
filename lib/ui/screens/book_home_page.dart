@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/providers/order.dart';
+// ignore: unused_import
+import 'package:hikeabis_app/data/providers/order_provider.dart';
 import 'package:hikeabis_app/ui/home/homepage.dart';
 import 'package:hikeabis_app/ui/screens/akun_page.dart';
 import 'package:hikeabis_app/ui/screens/order_page.dart';
 import 'package:hikeabis_app/ui/screens/rekomendasi_page.dart';
-
-void main() {
-  runApp(const MaterialApp(
-    home: BookHomePage(),
-  ));
-}
 
 class BookHomePage extends StatefulWidget {
   const BookHomePage({super.key});

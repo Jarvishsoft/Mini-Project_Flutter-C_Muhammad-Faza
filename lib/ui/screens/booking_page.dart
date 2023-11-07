@@ -1,10 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// ignore: unused_import
-import 'package:hikeabis_app/ui/home/homepage.dart';
+import 'package:hikeabis_app/data/models/order_model.dart';
+import 'package:hikeabis_app/data/providers/order_provider.dart';
 import 'package:hikeabis_app/ui/screens/book_home_page.dart';
 import 'package:hikeabis_app/ui/widgets/custom_form_field.dart';
+import 'package:provider/provider.dart';
 
 class BookingPage extends StatefulWidget {
   const BookingPage({super.key});
@@ -15,12 +16,12 @@ class BookingPage extends StatefulWidget {
 
 class _BookingPageState extends State<BookingPage> {
   final _formKey = GlobalKey<FormState>();
-  final _nama = TextEditingController();
-  final _nik = TextEditingController();
-  final _noTelp = TextEditingController();
-  final _email = TextEditingController();
-  final _usia = TextEditingController();
-  final _alamat = TextEditingController();
+  final TextEditingController _nama = TextEditingController();
+  final TextEditingController _nik = TextEditingController();
+  final TextEditingController _noTelp = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _usia = TextEditingController();
+  final TextEditingController _alamat = TextEditingController();
   bool isCheck = false;
 
   @override
@@ -291,7 +292,32 @@ class _BookingPageState extends State<BookingPage> {
                   if (isCheck) {
                     setState(
                       () {
-                        if (_formKey.currentState!.validate()) {
+                        String nama = _nama.text;
+                        String nik = _nik.text;
+                        String noTelp = _noTelp.text;
+                        String email = _email.text;
+                        String usia = _usia.text;
+                        String alamat = _alamat.text;
+
+                        if (nama.isNotEmpty &&
+                            nik.isNotEmpty &&
+                            noTelp.isNotEmpty &&
+                            email.isNotEmpty &&
+                            usia.isNotEmpty &&
+                            alamat.isNotEmpty)
+                        // if (_formKey.currentState!.validate())
+                        {
+                          Provider.of<OrderProvider>(context, listen: false)
+                              .addOrderModels(
+                            OrderModels(
+                              nama: _nama.text,
+                              nik: _nik.text,
+                              noTelp: _noTelp.text,
+                              email: _email.text,
+                              usia: _usia.text,
+                              alamat: _alamat.text,
+                            ),
+                          );
                           _showDialog();
                           _nama.clear();
                           _nik.clear();

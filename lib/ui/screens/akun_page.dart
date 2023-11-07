@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/providers/auth_provider.dart';
 import 'package:hikeabis_app/data/authentication/login.dart';
 import 'package:hikeabis_app/data/models/user_model.dart';
 import 'package:provider/provider.dart';
@@ -54,8 +54,8 @@ class _AkunPageState extends State<AkunPage> {
                 onPressed: () {},
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: const Color(0XFF47597E),
-                  padding: const EdgeInsets.all(16),
+                  backgroundColor: const Color(0xFF968989),
+                  padding: const EdgeInsets.all(18),
                   shape: const StadiumBorder(),
                 ),
                 child: const Text('Edit Profile'),
@@ -67,8 +67,8 @@ class _AkunPageState extends State<AkunPage> {
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: const Color(0XFF47597E),
-                  padding: const EdgeInsets.all(16),
+                  backgroundColor: const Color(0xFF968989),
+                  padding: const EdgeInsets.all(18),
                   shape: const StadiumBorder(),
                 ),
                 child: const Text('Logout'),

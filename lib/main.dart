@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/providers/auth_provider.dart';
 import 'package:hikeabis_app/data/authentication/splashpage.dart';
-import 'package:hikeabis_app/data/providers/booking.dart';
-import 'package:hikeabis_app/data/providers/order.dart';
+import 'package:hikeabis_app/data/providers/order_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => Order()),
-        ChangeNotifierProvider(create: (_) => Booking()),
+        ChangeNotifierProvider(create: (_) => OrderProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: const MyApp(),

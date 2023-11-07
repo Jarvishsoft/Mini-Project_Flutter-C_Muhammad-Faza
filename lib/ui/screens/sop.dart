@@ -51,11 +51,11 @@ class _SOPState extends State<SOP> {
                 ),
               ),
               const Divider(color: Colors.black87),
-              const Divider(color: Colors.black87),
+              // const Divider(color: Colors.black87),
               const SizedBox(height: 20),
               TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 150, 137, 137),
+                  backgroundColor: const Color.fromRGBO(150, 137, 137, 1),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.all(22),
                   shape: const StadiumBorder(),

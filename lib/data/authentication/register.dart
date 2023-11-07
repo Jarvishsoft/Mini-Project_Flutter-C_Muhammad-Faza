@@ -1,7 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/providers/auth_provider.dart';
 import 'package:hikeabis_app/data/authentication/login.dart';
 import 'package:hikeabis_app/ui/widgets/custom_form_field.dart';
 import 'package:provider/provider.dart';
@@ -140,8 +140,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 TextButton(
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: const Color(0XFF47597E),
-                    padding: const EdgeInsets.all(16),
+                    backgroundColor: const Color(0xFF968989),
+                    padding: const EdgeInsets.all(20),
                   ),
                   child: const Text(
                     'Register',

@@ -26,38 +26,58 @@ class _RekomendasiState extends State<Rekomendasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Rekomendasi',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-          ),
-        ),
-        centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
-      ),
-      body: const Material(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Dapatkan rekomendasi perjalanan mendaki Anda menggunakan fitur rekomendasi AI di bawah ini yaa : ',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+        appBar: AppBar(
+          title: const Text(
+            'Rekomendasi',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
             ),
           ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.white,
         ),
-      ),
-    );
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.close_rounded,
+                color: Colors.red,
+              ),
+              Text(
+                'Under Construction',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.red,
+                ),
+              ),
+            ],
+          ),
+        )
+        //const Material(
+        //   child: SingleChildScrollView(
+        //     child: Padding(
+        //       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        //       child: Column(
+        //         children: <Widget>[
+        //           Text(
+        //             'Dapatkan rekomendasi perjalanan mendaki Anda menggunakan fitur rekomendasi AI di bawah ini yaa : ',
+        //             style: TextStyle(
+        //               fontSize: 16,
+        //             ),
+        //             textAlign: TextAlign.center,
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        );
   }
 }

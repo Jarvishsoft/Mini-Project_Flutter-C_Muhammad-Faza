@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hikeabis_app/data/authentication/auth_provider.dart';
+import 'package:hikeabis_app/data/providers/auth_provider.dart';
 import 'package:hikeabis_app/data/models/user_model.dart';
+import 'package:hikeabis_app/ui/screens/berita_page.dart';
 import 'package:hikeabis_app/ui/screens/booking_page.dart';
 import 'package:hikeabis_app/ui/screens/panduan_page.dart';
 import 'package:hikeabis_app/ui/screens/sop.dart';
@@ -146,7 +147,9 @@ class _HomePageState extends State<HomePage> {
                               Material(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.offAll(const WartaGunung());
+                                  },
                                   child: const ItemKategori(
                                     title: 'Warta Gunung',
                                     icon: 'assets/berita.png',
@@ -199,27 +202,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
-                Material(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  // borderRadius: BorderRadius.circular(16),
-                  child: InkWell(
-                    onTap: () {},
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          SizedBox(
-                            height: 60,
-                            width: 60,
-                            child: Icon(Icons.more_horiz_rounded, size: 30),
-                          ),
-                          Text('more'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                const SizedBox(height: 70),
               ],
             ),
           ),
