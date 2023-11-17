@@ -1,83 +1,86 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 class Rekomendasi extends StatefulWidget {
-  const Rekomendasi({super.key});
+  final String result;
+  const Rekomendasi({super.key, required this.result});
 
   @override
   State<Rekomendasi> createState() => _RekomendasiState();
 }
 
 class _RekomendasiState extends State<Rekomendasi> {
-  Future fetchData() async {
-    final response = await http.get(Uri.parse('https://api.example.com/data'));
-
-    if (response.statusCode == 200) {
-      // Response OK
-      return response.body;
-    } else {
-      // Handle error
-      throw Exception('Failed to load data from the API');
-    }
-  }
+  bool resultText = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Rekomendasi',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
+      appBar: AppBar(
+        title: const Text(
+          'Rekomendasi',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+        centerTitle: true,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.white,
+      ),
+      body: Center(
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(
+                  resultText ||
+                          widget.result.length <=
+                              300 // Show full text or first 300 characters
+                      ? widget.result //  Show rsult full text
+                      : '${widget.result.substring(0, 300)}${String.fromCharCode(8230)}',
+                ),
+                if (widget.result.length > 300)
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        resultText = !resultText;
+                      });
+                    },
+                    child: Text(
+                      resultText ? 'Close' : 'Selengkapnya',
+                    ),
+                  ),
+              ],
             ),
           ),
-          centerTitle: true,
-          iconTheme: const IconThemeData(
-            color: Colors.black,
-          ),
-          backgroundColor: Colors.white,
         ),
-        body: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.close_rounded,
-                color: Colors.red,
-              ),
-              Text(
-                'Under Construction',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.red,
-                ),
-              ),
-            ],
-          ),
-        )
-        //const Material(
-        //   child: SingleChildScrollView(
-        //     child: Padding(
-        //       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        //       child: Column(
-        //         children: <Widget>[
-        //           Text(
-        //             'Dapatkan rekomendasi perjalanan mendaki Anda menggunakan fitur rekomendasi AI di bawah ini yaa : ',
-        //             style: TextStyle(
-        //               fontSize: 16,
-        //             ),
-        //             textAlign: TextAlign.center,
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        // ),
-        );
+      ),
+      //const Material(
+      //   child: SingleChildScrollView(
+      //     child: Padding(
+      //       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      //       child: Column(
+      //         children: <Widget>[
+      //           Text(
+      //             'Dapatkan rekomendasi perjalanan mendaki Anda menggunakan fitur rekomendasi AI di bawah ini yaa : ',
+      //             style: TextStyle(
+      //               fontSize: 16,
+      //             ),
+      //             textAlign: TextAlign.center,
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
+    );
   }
 }

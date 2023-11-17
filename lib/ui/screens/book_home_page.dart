@@ -54,7 +54,14 @@ class _BookHomePageState extends State<BookHomePage> {
               selectedIndex = index;
             });
           },
-          children: const [HomePage(), OrderPage(), Rekomendasi(), AkunPage()],
+          children: const [
+            HomePage(),
+            OrderPage(),
+            Rekomendasi(
+              result: '',
+            ),
+            AkunPage()
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
