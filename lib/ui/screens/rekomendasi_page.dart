@@ -18,7 +18,7 @@ class _RekomendasiState extends State<Rekomendasi> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Rekomendasi',
+          'Rekomendasi Gunung by AI',
           style: TextStyle(
             color: Colors.black,
             fontSize: 16,
